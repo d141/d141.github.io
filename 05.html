@@ -62,7 +62,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody().strength(-150))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("https://raw.githubusercontent.com/d141/590FP/main/networks_00-10/data_2000%20-%202001.json", function(error, graph) {
+d3.json("https://raw.githubusercontent.com/d141/590FP/main/networks_00-10/data_2005%20-%202006.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")
@@ -81,7 +81,6 @@ d3.json("https://raw.githubusercontent.com/d141/590FP/main/networks_00-10/data_2
 	d3.select("p").text("Team: " + d.id + "\nDivision: " + d.division + "\nFavorite Partner: " + d.favorite_partner + "\nStrategy: " + d.strategy + "\nTrades w/ Favorite Partner: " + d.favorite_partner_weight
 	+ "\nNumber of Trade Partners: " + d.degree + "\nPartner's Avg Number of Partner: " + d.neighbor_degree + "\nBetweenness: " + d.betweenness + "\nPageRank: " + d.page_rank);
     });
-	
 	
   var circles = node.append("circle")
       .attr("r", 10)
