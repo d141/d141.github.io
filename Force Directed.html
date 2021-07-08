@@ -21,7 +21,7 @@ text {
 
 <table width="400" border="1" class="table">
     <tr>
-        <td><a href="#">2000-2001</a></td>
+        <td><a href="Untitled1.html">2000-2001</a></td>
         <td><a href="#">2001-2002</a></td>
         <td><a href="#">2002-2003</a></td>
 		<td><a href="#">2003-2004</a></td>
@@ -64,7 +64,7 @@ var simulation = d3.forceSimulation()
     .force("charge", d3.forceManyBody().strength(-150))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
-d3.json("https://raw.githubusercontent.com/d141/590FP/main/data.json", function(error, graph) {
+d3.json("https://raw.githubusercontent.com/d141/590FP/main/NHL%2010-11.json", function(error, graph) {
   if (error) throw error;
 
   var link = svg.append("g")
@@ -86,7 +86,7 @@ d3.json("https://raw.githubusercontent.com/d141/590FP/main/data.json", function(
 	
   var circles = node.append("circle")
       .attr("r", 10)
-      .attr("fill", function(d) { return color(d.group); })
+      .attr("fill", function(d) { return color(d.color_group); })
       .call(d3.drag()
           .on("start", dragstarted)
           .on("drag", dragged)
