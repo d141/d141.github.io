@@ -43,7 +43,7 @@ text {
     </tr>
 </table>
 
-<p class="info">
+<p style="white-space: pre-line" class="info">
 
 </p>
 
@@ -80,7 +80,7 @@ d3.json("https://raw.githubusercontent.com/d141/590FP/main/NHL%2010-11.json", fu
     .data(graph.nodes)
     .enter().append("g")
 	.on("click", function(d){
-	d3.select("p").text(d.id + " ");
+	d3.select("p").text("Team: " + d.id + "\nDivision: " + d.division);
     });
 	
 	
